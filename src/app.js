@@ -11,8 +11,8 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:8080'], // Add production domain here later
-    credentials: true
+    origin: '*', // Allow all origins — restrict to your domain after deployment if needed
+    credentials: false  // Must be false when origin is '*'
 }));
 app.use(helmet());
 app.use(morgan('dev')); // Logger
